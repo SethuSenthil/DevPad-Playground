@@ -11,7 +11,7 @@
     <center>
         <h1>DevPad Playground</h1>
         <p>Playground for string based payload data extraction</p>
-        <p>Dev Tools: str = text as string, obj = text (json) parsed as obj</p>
+        <p>Open JS console and read the logs!</p>
     </center>
     <textarea class="dont-break-out" cols="100" rows="30" name="text" id="text"
         style="width:100%;background-color: #EEE8AA;border:none;height:calc(100% - 20px);" spellcheck="false"
@@ -19,6 +19,7 @@
 </body>
 
 <script>
+    console.log(`%cDev Quick Access Variables: \n str = textarea payload as string \n obj = textarea payload (json) parsed into object`,"font-family:monospace; font-size: 20px");
     const input = document.querySelector('#text')
     let str = ''
     const objTemp = {
