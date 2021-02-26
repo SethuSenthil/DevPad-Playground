@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPad Playground</title>
+</head>
+
+<body>
+    <center>
+        <h1>DevPad Playground</h1>
+        <p>Playground for string based payload data extraction</p>
+        <p>Dev Tools: str = text as string, obj = text (json) parsed as obj</p>
+    </center>
+    <textarea class="dont-break-out" cols="100" rows="30" name="text" id="text"
+        style="width:100%;background-color: #EEE8AA;border:none;height:calc(100% - 20px);" spellcheck="false"
+        onchange="setStr()"></textarea>
+</body>
+
+<script>
+    const input = document.querySelector('#text')
+    let str = ''
+    const objTemp = {
+        msg: 'Payload not valid JSON'
+    }
+    let obj = objTemp
+
+    const setStr = () => {
+        str = input.value
+        try {
+            obj = JSON.parse(str)
+        } catch {
+            obj = objTemp
+        }
+    }
+</script>
+
+</html>
